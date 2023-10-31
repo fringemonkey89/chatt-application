@@ -9,4 +9,4 @@ If you're interested in exploring socket.io, please use my code and expand on yo
 concerning the socket.io package
 
 ## Screenshot
-![Alt Text](public/image.png)
+![Alt Text](public/Screenshot 2023-10-31 122329.png)
