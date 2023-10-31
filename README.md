@@ -7,3 +7,6 @@ The code isn't an identical copy of the original from geeksforgeeks website, I h
 to refactor the code and add additional packages so that it can run without crashing.
 If you're interested in exploring socket.io, please use my code and expand on your knowledge
 concerning the socket.io package
+
+## Screenshot
+![Alt Text](public/image.png)
