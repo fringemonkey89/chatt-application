@@ -7,6 +7,14 @@ const server = require('http').createServer(app);
 
 app.use(cors());
 
+app.use('/public', express.static('public', {
+    setHeaders: (res, path, stat) => {
+      if (path.endsWith('.css')) {
+        res.setHeader('Content-Type', 'text/css');
+      }
+    }
+  }));
+
 app.get('/', (req, res) => {
     fs.readFile(__dirname + '/index.html', (err, data) => {
       if (err) {
