@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const server = http.createServer((req, res) => {
     if (req.url === '/') {
-        fs.readFilr(__dirname + '/index.html', (err, data) => {
+        fs.readFile(__dirname + '/index.html', (err, data) => {
             if(err){
                 res.writeHead(500);
                 res.end('error loading index.html');
@@ -19,10 +19,10 @@ const io = require('socket.io')(server);
 const port = 5000;
 
 io.on('connection', (socket)=> {
-    socket.io('send name', (user) => {
+    socket.on('send name', (user) => {
         io.emit('send name', user) ;
     })
-    socket.io('send message', (chat) => {
+    socket.on('send message', (chat) => {
         io.emit('send message', chat) ;
     })
 })
