@@ -1,22 +1,32 @@
-const http = require('http');
+const express = require('express')
 const fs = require('fs');
+const cors = require('cors');
 
-const server = http.createServer((req, res) => {
-    if (req.url === '/') {
-        fs.readFile(__dirname + '/index.html', (err, data) => {
-            if(err){
-                res.writeHead(500);
-                res.end('error loading index.html');
-            } else {
-                res.writeHead(200, {'Content-type': 'text/html'});
-                res.end(data)
-            }
-        })
-    }
-});
+const app = express();
+const server = require('http').createServer(app);
+
+app.use(cors());
+
+app.get('/', (req, res) => {
+    fs.readFile(__dirname + '/index.html', (err, data) => {
+      if (err) {
+        res.writeHead(500);
+        res.end('error loading index.html');
+      } else {
+        res.writeHead(200, { 'Content-type': 'text/html' });
+        res.end(data);
+      }
+    });
+  });
+  
+
+
 
 const io = require('socket.io')(server);
 const port = 5000;
+
+//server.on('request', cors());
+
 
 io.on('connection', (socket)=> {
     socket.on('send name', (user) => {

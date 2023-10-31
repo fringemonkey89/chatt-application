@@ -34,14 +34,14 @@
             message.value = '';
             }
         })
-        socket.io('send name', (username) => {
+        socket.on('send name', (username) => {
             let name = document.createElement('p');
             name.classList.add('message');
             name.innerHTML = `<span class = "username">${username}:</span>`;
             messageArea.appendChild(name);
         })
 
-        socket.io('send message', (chat) => {
+        socket.on('send message', (chat) => {
             let chatContent = document.createElement('p');
             chatContent.classList.add('message');
             chatContent.textContent = chat;
