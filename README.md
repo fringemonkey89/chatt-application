@@ -8,5 +8,3 @@ to refactor the code and add additional packages so that it can run without cras
 If you're interested in exploring socket.io, please use my code and expand on your knowledge
 concerning the socket.io package
 
-## Screenshot
-![Alt Text](public/Screenshot 2023-10-31 122329.png)
