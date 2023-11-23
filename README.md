@@ -9,4 +9,4 @@ If you're interested in exploring socket.io, please use my code and expand on yo
 concerning the socket.io package
 
 ## Pictures
-<img src = "" width="350"  height="450">
+<img src = "Screenshot 2023-10-31 122329.png" width="650"  height="450">
